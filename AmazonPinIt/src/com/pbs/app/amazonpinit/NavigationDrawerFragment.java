@@ -205,6 +205,10 @@ public class NavigationDrawerFragment extends Fragment {
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
     }
     
+    public ListView getListView(){
+    	return mDrawerListView;
+    }
+    
     public static interface NavigationDrawerCallbacks {
 		void onNavigationDrawerItemSelected(int position);
 	}

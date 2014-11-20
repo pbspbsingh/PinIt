@@ -32,16 +32,22 @@
     </style>
 
     <style name="btnStyleBeige" parent="@android:style/Widget.Button">
-        <item name="android:textSize">15sp</item>
+        <item name="android:textSize">14sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">#5d6153</item>
         <item name="android:gravity">center</item>
-        <item name="android:shadowColor">#000000</item>
+       <!--  <item name="android:shadowColor">#000000</item> -->
         <item name="android:shadowDx">1</item>
         <item name="android:shadowDy">1</item>
         <item name="android:shadowRadius">0.6</item>
         <item name="android:background">@drawable/custom_btn_beige</item>
-        <item name="android:padding">10dip</item>
+        <item name="android:padding">5dip</item>
     </style>
 
+     <style name="foodRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/ratingstars</item>
+        <item name="android:minHeight">22dip</item>
+        <item name="android:maxHeight">22dip</item>
+    </style>
+    
 </resources>

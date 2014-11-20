@@ -24,16 +24,19 @@
             </intent-filter>
         </activity>
         <activity android:name="com.pbs.app.amazonpinit.start.SignIn" android:label="" android:icon="@drawable/icon" >
-            <intent-filter>
-            </intent-filter>
         </activity>
-        <activity android:name=".HomeActivity" android:label="" android:icon="@drawable/icon">
-            <intent-filter>
-            </intent-filter>
+        <activity android:name=".HomeActivity" android:label="" android:icon="@drawable/icon" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation">
         </activity>
-        <activity android:name=".AppDetailActivity" android:label="" android:icon="@drawable/icon">
+        <activity android:name=".AppDetailActivity" android:label="" android:icon="@drawable/icon" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation">
+        </activity>
+        <activity android:name=".PinActivity" android:label="" android:icon="@drawable/icon" 
+            android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" android:theme="@android:style/Theme.NoTitleBar">
             <intent-filter>
+                <action android:name="com.pbs.apppin.PIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="pinit" />
             </intent-filter>
+
         </activity>
     </application>
 

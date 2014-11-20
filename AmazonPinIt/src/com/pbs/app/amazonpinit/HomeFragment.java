@@ -112,6 +112,7 @@ public class HomeFragment extends Fragment {
 			intent.putExtra("appTitle", model.getAppTitle());
 			intent.putExtra("appPackage", model.getAppPackage());
 			intent.putExtra("comment", model.getComment());
+			
 			startActivity(intent);
 		}
 	}

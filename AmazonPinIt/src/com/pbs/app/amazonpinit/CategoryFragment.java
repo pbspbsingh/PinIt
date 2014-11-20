@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.pbs.app.amazonpinit.adapter.CategoryAdapter;
 import com.pbs.app.amazonpinit.adapter.CategoryModel;
+import com.pbs.app.amazonpinit.adapter.NavListItemModel;
 import com.pbs.app.amazonpinit.utils.HttpCaller;
 
 public class CategoryFragment extends Fragment {
@@ -48,7 +49,8 @@ public class CategoryFragment extends Fragment {
 				Toast.makeText(getActivity(), "Please select more than 3 categories", Toast.LENGTH_SHORT).show();
 				return;
 			}
-
+			final String totalCategoriesSelected = Integer.toString(count);
+			
 			loading.setVisibility(View.VISIBLE);
 			content.setVisibility(View.GONE);
 			new AsyncTask<Void, String, Boolean>() {
@@ -78,6 +80,7 @@ public class CategoryFragment extends Fragment {
 					if (result) {
 						Toast.makeText(getActivity(), "Saved!", Toast.LENGTH_SHORT).show();
 						((HomeActivity)getActivity()).selectScreen(0);
+						((NavListItemModel)((HomeActivity)getActivity()).getDrawyerListView().getItemAtPosition(1)).setCounter(totalCategoriesSelected);
 						loading.setVisibility(View.GONE);
 						content.setVisibility(View.VISIBLE);
 					} else {

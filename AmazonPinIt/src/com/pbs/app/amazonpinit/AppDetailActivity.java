@@ -62,15 +62,18 @@ public class AppDetailActivity extends Activity {
 					try {
 						final JSONObject obj1 = arr.getJSONObject(0);
 						((ImageView) findViewById(R.id.sugAppIcon1)).setImageBitmap(convertStr2BitMap(obj1.getString("appIcon")));
-						((TextView) findViewById(R.id.sugAppTitle1)).setText(obj1.getString("appTitle"));
+						final String title1 = obj1.getString("appTitle");
+						((TextView) findViewById(R.id.sugAppTitle1)).setText(title1.length() > 10 ? title1.substring(0, 10) + "..." : title1);
 
 						final JSONObject obj2 = arr.getJSONObject(1);
 						((ImageView) findViewById(R.id.sugAppIcon2)).setImageBitmap(convertStr2BitMap(obj2.getString("appIcon")));
-						((TextView) findViewById(R.id.sugAppTitle2)).setText(obj2.getString("appTitle"));
+						final String title2 = obj1.getString("appTitle");
+						((TextView) findViewById(R.id.sugAppTitle2)).setText(title2.length() > 10 ? title2.substring(0, 10) + "..." : title2);
 
 						final JSONObject obj3 = arr.getJSONObject(2);
 						((ImageView) findViewById(R.id.sugAppIcon3)).setImageBitmap(convertStr2BitMap(obj3.getString("appIcon")));
-						((TextView) findViewById(R.id.sugAppTitle3)).setText(obj3.getString("appTitle"));
+						final String title3 = obj3.getString("appTitle");
+						((TextView) findViewById(R.id.sugAppTitle3)).setText(title3.length() > 10 ? title3.substring(0, 10) + "..." : title3);
 
 						findViewById(R.id.suggestionLoader).setVisibility(View.GONE);
 						findViewById(R.id.suggesetions).setVisibility(View.VISIBLE);
@@ -84,11 +87,14 @@ public class AppDetailActivity extends Activity {
 	}
 
 	public void install(View v) {
-		String url = "http://www.amazon.com/gp/mas/dl/android?p=" + getIntent().getExtras().getString("appPackage") + "&showAll=1";
-		Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+		final String url = "http://www.amazon.com/gp/mas/dl/android?s=" + getIntent().getExtras().getString("appTitle") + "&showAll=1";
+		final Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
 		startActivity(myIntent);
 	}
 
 	public void pinIt(View v) {
+		final Intent intent = new Intent(getApplicationContext(), PinActivity.class);
+		intent.putExtras(getIntent().getExtras());
+		startActivity(intent);
 	}
 }

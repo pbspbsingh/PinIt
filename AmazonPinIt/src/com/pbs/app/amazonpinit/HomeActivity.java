@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.pbs.app.amazonpinit.utils.Constants;
@@ -55,8 +56,8 @@ public class HomeActivity extends ActionBarActivity implements NavigationDrawerF
 			transaction.replace(R.id.container2, fragment2);
 			
 			this.meFragment = new MeFragment();
-			fragment2.setArguments(bundle);
-			transaction.replace(R.id.container2, fragment2);
+			meFragment.setArguments(bundle);
+			transaction.replace(R.id.container3, meFragment);
 
 			transaction.commit();
 
@@ -141,6 +142,10 @@ public class HomeActivity extends ActionBarActivity implements NavigationDrawerF
 
 	public void selectScreen(int position) {
 		mNavigationDrawerFragment.selectItem(position);
+	}
+	
+	public ListView getDrawyerListView(){
+		return mNavigationDrawerFragment.getListView();
 	}
 
 }

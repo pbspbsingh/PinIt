@@ -66,7 +66,7 @@ public class SignIn extends Activity {
 		final String email = ((EditText) findViewById(R.id.email)).getText().toString();
 		final String password = ((EditText) findViewById(R.id.password)).getText().toString();
 		if (isEmpty(userName) || isEmpty(email) || isEmpty(password)) {
-			Toast.makeText(getApplicationContext(), "All Files are mandatory", Toast.LENGTH_LONG).show();
+			Toast.makeText(getApplicationContext(), "All Files are mandatory", Toast.LENGTH_SHORT).show();
 			return;
 		}
 		new AsyncTask<Void, String, Void>() {
@@ -99,7 +99,7 @@ public class SignIn extends Activity {
 			protected void onProgressUpdate(String... values) {
 				if (values[0].equals("error")) {
 					if (values.length >= 2)
-						Toast.makeText(getApplicationContext(), values[1], Toast.LENGTH_LONG).show();
+						Toast.makeText(getApplicationContext(), values[1], Toast.LENGTH_SHORT).show();
 					else
 						Toast.makeText(getApplicationContext(), "Something went wrong, please try again.", Toast.LENGTH_LONG).show();
 				} else if (values[0].equals("success")) {
@@ -114,7 +114,7 @@ public class SignIn extends Activity {
 		final String email = ((EditText) findViewById(R.id.email)).getText().toString();
 		final String password = ((EditText) findViewById(R.id.password)).getText().toString();
 		if (isEmpty(email) || isEmpty(password)) {
-			Toast.makeText(getApplicationContext(), "All Files are mandatory", Toast.LENGTH_LONG).show();
+			Toast.makeText(getApplicationContext(), "All Files are mandatory", Toast.LENGTH_SHORT).show();
 			return;
 		}
 		new AsyncTask<Void, String, Void>() {
@@ -147,9 +147,9 @@ public class SignIn extends Activity {
 			protected void onProgressUpdate(String... values) {
 				if (values[0].equals("error")) {
 					if (values.length >= 2)
-						Toast.makeText(getApplicationContext(), values[1], Toast.LENGTH_LONG).show();
+						Toast.makeText(getApplicationContext(), values[1], Toast.LENGTH_SHORT).show();
 					else
-						Toast.makeText(getApplicationContext(), "Something went wrong, please try again.", Toast.LENGTH_LONG).show();
+						Toast.makeText(getApplicationContext(), "Something went wrong, please try again.", Toast.LENGTH_SHORT).show();
 				} else if (values[0].equals("success")) {
 					login(values[1], values[2]);
 				}

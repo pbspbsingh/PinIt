@@ -19,8 +19,8 @@
 
         <ImageView
             android:id="@+id/appIcon"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:scaleType="fitStart"
             android:src="@drawable/splash" />
 
@@ -32,7 +32,7 @@
             android:lines="1"
             android:text="Hightail"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textSize="16sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/appCompany"
@@ -41,7 +41,7 @@
             android:lines="1"
             android:text="Hightail Inc"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textSize="12sp" />
+            android:textSize="10sp" />
 
         <TextView
             android:id="@+id/comment"
@@ -57,7 +57,7 @@
             android:paddingTop="5dp"
             android:text="comment"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textSize="12sp" />
+            android:textSize="10sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -97,8 +97,8 @@
 
                 <ImageView
                     android:id="@+id/pin"
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
                     android:src="@drawable/ic_pin" />
 
                 <TextView
@@ -115,14 +115,14 @@
             android:id="@+id/userDetails"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:gravity="center_vertical"
+            android:layout_marginTop="0dp"
+            android:gravity="center_vertical|center_horizontal"
             android:orientation="horizontal" >
 
             <ImageView
                 android:id="@+id/imageView1"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:src="@drawable/abc_list_focused_holo" />
 
             <TextView
@@ -130,7 +130,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="user name"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="12dp"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
 
         </LinearLayout>

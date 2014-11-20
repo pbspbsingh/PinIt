@@ -5,7 +5,7 @@ public class NavListItemModel {
 	private final String title;
 	private final int icon;
 	private final boolean hasCounter;
-	private final String counter;
+	private String counter;
 
 	public NavListItemModel(String title, int icon, boolean hasCounter, String counter) {
 		this.title = title;
@@ -32,6 +32,10 @@ public class NavListItemModel {
 
 	public String getCounter() {
 		return counter;
+	}
+	
+	public void setCounter(String counter) {
+		this.counter = counter;
 	}
 
 	@Override
